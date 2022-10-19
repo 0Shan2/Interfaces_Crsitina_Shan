@@ -21,9 +21,9 @@ public class MenuController {
     @FXML
     private void abrirFormulario(ActionEvent event) {    	
     	try {
-			// Cargamos el archivo Controles Dinámicos
+			// Cargamos el archivo Page Form
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MenuController.class.getResource("/basicoDinamico/ControlesDinamicos.fxml"));
+			loader.setLocation(MenuController.class.getResource("\\pageForm\\ControllerForm.fxml"));
 			GridPane listadoControles = (GridPane) loader.load();
 
 			// Se sitúa en el centro del diseño principal

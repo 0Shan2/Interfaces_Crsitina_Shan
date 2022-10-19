@@ -25,7 +25,10 @@ public class MainPractica extends Application {
 			// Mostramos la escena del BorderPane de la variable rootLayot
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("Ejemplo sobre controles");
+			// Opciones de pantalla
+			primaryStage.setResizable(false);
+			//primaryStage.setMaximized(false);
+			primaryStage.setTitle("Joyería SIX");
 			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
