@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -14,23 +16,24 @@
    <top>
       <AnchorPane prefHeight="30.0" prefWidth="200.0" BorderPane.alignment="TOP_RIGHT">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b2c9ff" height="40.0" stroke="#fcfca3" strokeType="INSIDE" width="900.0" />
-            <MenuBar layoutX="740.0" layoutY="5.0" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: #b2c9ff;">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c1e2db" height="40.0" stroke="#c8e6cf" strokeType="INSIDE" width="900.0" />
+            <MenuBar layoutX="715.0" layoutY="5.0" prefHeight="30.0" prefWidth="178.0" style="-fx-background-color: #c1e2db;">
               <menus>
-                <Menu mnemonicParsing="false" text="File">
+                <Menu mnemonicParsing="false" text="Editar">
                   <items>
-                        <MenuItem mnemonicParsing="false" onAction="#abrirFormulario" text="Open" />
-                    <MenuItem mnemonicParsing="false" onAction="#cerrarListado" text="Close" />
+                        <MenuItem mnemonicParsing="false" text="Formulario" />
+                    <MenuItem mnemonicParsing="false" text="Close" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
+                <Menu mnemonicParsing="false" text="Ayuda">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
+                    <MenuItem mnemonicParsing="false" text="Guía" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Help">
+                <Menu mnemonicParsing="false" text="Centro">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
+                    <MenuItem mnemonicParsing="false" text="Inicio" />
+                        <MenuItem mnemonicParsing="false" text="Sobre SIX" />
                   </items>
                 </Menu>
               </menus>
@@ -39,13 +42,25 @@
       </AnchorPane>
    </top>
    <left>
-      <VBox prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="175.0" style="-fx-background-color: c8e6cf;" text="Mujer" />
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="175.0" style="-fx-background-color: b2c5ce;" text="Hombre" />
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="175.0" style="-fx-background-color: c8e6cf;" text="Niños" />
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="175.0" style="-fx-background-color: b2c5ce;" text="Sets" />
+         </children>
+         <BorderPane.margin>
+            <Insets top="40.0" />
+         </BorderPane.margin></VBox>
    </left>
    <center>
-      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="TablaLista" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="ColCodigo" prefWidth="140.0" text="Código" />
+          <TableColumn fx:id="ColNombre" prefWidth="140.0" text="Nombre" />
+          <TableColumn fx:id="ColMaterial" prefWidth="140.0" text="Materiales" />
+            <TableColumn fx:id="ColCantidad" prefWidth="140.0" text="Cantidad_Stock" />
+            <TableColumn fx:id="ColPrecio" prefWidth="140.0" text="Precio" />
         </columns>
       </TableView>
    </center>
