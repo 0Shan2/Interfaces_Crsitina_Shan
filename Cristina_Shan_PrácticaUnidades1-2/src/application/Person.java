@@ -1,4 +1,4 @@
-package pageForm;
+package application;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -50,14 +50,27 @@ public class Person {
 	}
 
 
-	public SimpleIntegerProperty getCantidad_Stock() {
-		return Cantidad_Stock;
+	public int getCantidad_Stock() {
+		return Cantidad_Stock.get();
+	}
+	
+	public int setCantidad_Stock(int fCantidad) {
+		Cantidad_Stock.set(fCantidad);
+		return fCantidad;
 	}
 
-
-	public SimpleIntegerProperty getPrecio() {
-		return Precio;
+	public int getPrecio() {
+		return Precio.get();
 	}
+	
+	public int setPrecio(int fPrecio) {
+		Precio.set(fPrecio);
+		return fPrecio;
+	}
+	
+	
+	
+	
 	
 	
 	
