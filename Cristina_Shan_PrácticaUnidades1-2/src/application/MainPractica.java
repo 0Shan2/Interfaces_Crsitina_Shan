@@ -15,7 +15,7 @@ public class MainPractica extends Application {
 		try {
 			// Carga el diseño del archivo FXML en la variable rootLayout
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainPractica.class.getResource("Menu.fxml"));
+			loader.setLocation(MainPractica.class.getResource("/view/Menu.fxml"));
 			rootLayout = (BorderPane) loader.load();
 			
 			// Pasamos al controlador de menu el objeto con el BorderPane principal

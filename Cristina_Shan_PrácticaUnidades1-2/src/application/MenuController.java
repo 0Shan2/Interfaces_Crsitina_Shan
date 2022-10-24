@@ -11,8 +11,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
+import model.Person;
 
 public class MenuController {
 	
@@ -50,7 +51,7 @@ public class MenuController {
     private void initialize() {
     	
     	// Asociamos cada columna del TableView a una propiedad de la clase Person 
-    	ColCodigo.setCellValueFactory(new PropertyValueFactory<Person,String>("Código"));
+    	ColCodigo.setCellValueFactory(new PropertyValueFactory<Person,String>("Codigo"));
     	ColNombre.setCellValueFactory(new PropertyValueFactory<Person,String>("Nombre"));
     	ColMaterial.setCellValueFactory(new PropertyValueFactory<Person,String>("Material"));
     	ColCantidad.setCellValueFactory(new PropertyValueFactory<Person,Integer>("Cantidad_Stock"));
@@ -68,8 +69,8 @@ public class MenuController {
     	try {
 			// Cargamos el archivo Page Form
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MenuController.class.getResource("\\pageForm\\ControllerForm.fxml"));
-			GridPane listadoControles = (GridPane) loader.load();
+			loader.setLocation(MenuController.class.getResource("\\view\\ControllerForm.fxml"));
+			AnchorPane listadoControles = (AnchorPane) loader.load();
 
 			// Se sitúa en el centro del diseño principal
 			rootLayout.setCenter(listadoControles);
