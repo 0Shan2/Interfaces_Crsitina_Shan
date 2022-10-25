@@ -45,7 +45,7 @@
       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
             <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="175.0" style="-fx-background-color: c8e6cf;" text="Mujer" />
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="175.0" style="-fx-background-color: b2c5ce;" text="Hombre" />
+            <Button mnemonicParsing="false" onAction="#abrirTablaHombre" prefHeight="40.0" prefWidth="175.0" style="-fx-background-color: b2c5ce;" text="Hombre" />
             <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="175.0" style="-fx-background-color: c8e6cf;" text="Niños" />
             <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="175.0" style="-fx-background-color: b2c5ce;" text="Sets" />
          </children>

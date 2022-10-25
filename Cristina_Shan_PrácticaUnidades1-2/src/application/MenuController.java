@@ -7,18 +7,27 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import model.Person;
 
 public class MenuController {
 	
-	 @FXML
+
+	@FXML
 	    private TableView<Person> TablaLista;
+	 
+	 @FXML
+	    private TableView<Person> tablaHombre;
 	    
 	    @FXML
 	    private TableColumn<Person, String> ColCodigo;
@@ -43,6 +52,15 @@ public class MenuController {
 	    	    new Person("C00001", "Victoria Pendant", "Platino con diamantes marquesa", 3, 6500),
 	    	    new Person("C00002", "T&C Pendant", "Oro de 18k y platino con diamantes brillantes redondos", 1, 2950)
 	    	);
+	    
+	    // Lista auxiliar para TableHombre
+	    private ObservableList<Person> data2 = FXCollections.observableArrayList(
+	    	    new Person("P00001", "T&C Ring", "Oro de 18k y platino con diamantes brillantes redondos", 5, 3250),
+	    	    new Person("P00002", "Else Hoop Ring", "Platino con dos diamantes brillantes redondos", 2, 2125),	
+	    	    new Person("C00001", "X Atlas Ring", "Oro rosa de 18k con más de 40 diamantes brillantes redondos", 5, 2300),
+	    	    new Person("Pe00001", "Victoria Pendant", "Platino con diamantes marquesa", 3, 6500),
+	    	    new Person("Pe00002", "T&C Pendant", "Oro de 18k y platino con diamantes brillantes redondos", 1, 2950)
+	    	);
 	
 	// Pantalla principal en la que se añade o quita contenido
 	private BorderPane rootLayout;
@@ -62,14 +80,38 @@ public class MenuController {
         
         // Se rellena la tabla con objetos de la clase Person
     	TablaLista.setItems(data); 
+    	tablaHombre.setItems(data2); 
     }
     
+    //Abrimos en otra pantalla nuestro Form Controller
     @FXML
     private void abrirFormulario(ActionEvent event) {    	
     	try {
+    		
+    		  FXMLLoader loader=new FXMLLoader(getClass().getResource("/view/FormController.fxml"));
+    		  //Se carga la venta
+    		  Parent root=loader.load();
+
+    		  //crear una escena que viene del padre
+    		  Scene scene =new Scene(root);
+    		  Stage stage= new Stage();
+
+    		  //Modal hasta que no termine con el formulario no me deja volver a la ventana anterior
+    		  stage.initModality(Modality.APPLICATION_MODAL);
+    		  stage.setScene(scene);
+    		  stage.showAndWait();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    
+    @FXML
+    void abrirTablaHombre(ActionEvent event) {
+    	try {
 			// Cargamos el archivo Page Form
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MenuController.class.getResource("/view/FormController.fxml"));
+			loader.setLocation(MenuController.class.getResource("/view/TablaHombre.fxml"));
 			AnchorPane listadoControles = (AnchorPane) loader.load();
 
 			// Se sitúa en el centro del diseño principal
@@ -78,6 +120,7 @@ public class MenuController {
 			e.printStackTrace();
 		}
     }
+
     
     @FXML
     private void cerrarListado(ActionEvent event) {    	
