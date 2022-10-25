@@ -69,7 +69,7 @@ public class MenuController {
     	try {
 			// Cargamos el archivo Page Form
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MenuController.class.getResource("\\view\\ControllerForm.fxml"));
+			loader.setLocation(MenuController.class.getResource("/view/FormController.fxml"));
 			AnchorPane listadoControles = (AnchorPane) loader.load();
 
 			// Se sitúa en el centro del diseño principal
