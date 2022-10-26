@@ -1,18 +1,15 @@
 package application;
-	
+
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import view.InicioController;
 
 
 public class Inicio extends Application {
-	private BorderPane rootInicio;	
-	
+	private BorderPane rootInicio;
+
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -20,7 +17,7 @@ public class Inicio extends Application {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainPractica.class.getResource("/view/InicioStore.fxml"));
 			rootInicio = (BorderPane) loader.load();
-			
+
 			// Pasamos al controlador de menu el objeto con el BorderPane principal
 			InicioController inicioController = loader.getController();
 			inicioController.setRootLayout(rootInicio);
@@ -37,7 +34,7 @@ public class Inicio extends Application {
 			e.printStackTrace();
 		}
 	}
-	
-	
-	
+
+
+
 }

@@ -1,5 +1,5 @@
 package application;
-	
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -8,8 +8,8 @@ import javafx.stage.Stage;
 
 
 public class MainPractica extends Application {
-	private BorderPane rootLayout;	
-	
+	private BorderPane rootLayout;
+
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -17,7 +17,7 @@ public class MainPractica extends Application {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainPractica.class.getResource("/view/Menu.fxml"));
 			rootLayout = (BorderPane) loader.load();
-			
+
 			// Pasamos al controlador de menu el objeto con el BorderPane principal
 			MenuController menuController = loader.getController();
 			menuController.setRootLayout(rootLayout);
@@ -34,10 +34,10 @@ public class MainPractica extends Application {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}
 
-	
+
 }

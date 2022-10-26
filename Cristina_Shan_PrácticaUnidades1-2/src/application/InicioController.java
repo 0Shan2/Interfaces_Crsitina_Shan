@@ -1,8 +1,7 @@
-package view;
+package application;
 
 import java.io.IOException;
 
-import application.MenuController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,11 +19,12 @@ public class InicioController {
 	@FXML
 	private ChoiceBox<String> ChoiceLocation;
 
-	
+
 	//Pantalla principal en donde se muestra o añade el contenido
 	private BorderPane rootInicio;
 
 	/*------- INICIALIZADOR -----------------------------------------------------------------------------------------------------*/
+	@FXML
 	private void initialize() {
 
 		System.out.print(ChoiceLocation);
@@ -32,7 +32,7 @@ public class InicioController {
 		// Para añadir items al choiceBox
 		ChoiceLocation.getItems().addAll("España", "Francia", "Reino Unido", "Alemania", "Italia", "Polonia", "Austria",
 				"Hungría");
-		
+
 		// Para poner por defecto una opción
 		ChoiceLocation.setValue("España");
 	}
@@ -53,7 +53,7 @@ public class InicioController {
 		}
 
 	}
-	
+
 	/* -- NOS ABRA EL CENTRO DE ADMINISTRACIÓN -------------------------------------------------------------------------------------------- */
 	@FXML
 	void AbrirListas(ActionEvent event) {

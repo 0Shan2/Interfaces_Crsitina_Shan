@@ -9,6 +9,7 @@
 <?import javafx.scene.control.Pagination?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -22,7 +23,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.InicioController">
+<BorderPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.InicioController">
    <center>
       <AnchorPane prefHeight="700.0" prefWidth="900.0">
          <children>
@@ -276,6 +277,12 @@
             </HBox>
             <TextField layoutX="661.0" layoutY="56.0" prefHeight="26.0" prefWidth="203.0" promptText="Introduce tu correo electrónico" />
             <Text layoutX="653.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¡Subscribete para no perderte ninguna de nuestras promociones!" wrappingWidth="219.126708984375" />
+            <Slider disable="true" layoutX="358.0" layoutY="119.0" majorTickUnit="10.0" max="2022.0" min="1977.0" minorTickCount="10" prefHeight="38.0" prefWidth="184.0" showTickLabels="true" value="2022.0" />
+            <Text fill="#0000006f" layoutX="431.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@Desde">
+               <font>
+                  <Font name="Century" size="10.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </bottom>

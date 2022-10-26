@@ -11,8 +11,8 @@ public class Person {
 	private final SimpleStringProperty Material;
 	private final SimpleIntegerProperty Cantidad_Stock;
 	private final SimpleIntegerProperty Precio;
-	
-	
+
+
 	public Person(String codigo, String nombre, String material,
 			Integer cantidad_Stock, Integer precio) {
 		super();
@@ -27,7 +27,7 @@ public class Person {
 	public String getCodigo() {
 		return Codigo.get();
 	}
-	
+
 	public void setCodigo(String fCodigo) {
 		Codigo.set(fCodigo);
 	}
@@ -36,15 +36,15 @@ public class Person {
 	public String getNombre() {
 		return Nombre.get();
 	}
-	
+
 	public void setNombre(String fNombre) {
 		Nombre.set(fNombre);
 	}
-	
+
 	public String getMaterial() {
 		return Material.get();
 	}
-	
+
 	public void setMaterial(String fMaterial) {
 		Material.set(fMaterial);
 	}
@@ -53,7 +53,7 @@ public class Person {
 	public int getCantidad_Stock() {
 		return Cantidad_Stock.get();
 	}
-	
+
 	public int setCantidad_Stock(int fCantidad) {
 		Cantidad_Stock.set(fCantidad);
 		return fCantidad;
@@ -62,19 +62,19 @@ public class Person {
 	public int getPrecio() {
 		return Precio.get();
 	}
-	
+
 	public int setPrecio(int fPrecio) {
 		Precio.set(fPrecio);
 		return fPrecio;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
 }
