@@ -267,6 +267,11 @@
                               </Button>
                            </children>
                         </AnchorPane>
+                        <Text layoutX="236.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Elaboración 100% artesanal de minas de nuestra propiedad." wrappingWidth="328.53668212890625">
+                           <font>
+                              <Font name="Georgia" size="12.0" />
+                           </font>
+                        </Text>
                      </children>
                   </AnchorPane>
                </top>

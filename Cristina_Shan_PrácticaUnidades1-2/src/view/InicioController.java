@@ -14,7 +14,7 @@ public class InicioController {
 	   private void initialize() {
 		   
 		   /*CHOICE BOX  -------------------------------------------------------------------------------------------------------------------------------- */
-			  //Para añadir una línea de separación
+			  //Para añadir items al choiceBox
 		   ChoiceLocation.getItems().addAll("España", "Francia" ,"Reino Unido", "Alemania", "Italia", "Polonia", "Austria", "Hungría");
 			  //Para poner por defecto una opción
 		   ChoiceLocation.setValue("España");
