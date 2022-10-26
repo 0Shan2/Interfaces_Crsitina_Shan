@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 public class InicioController {
 
 	@FXML
-	private ChoiceBox<Object> ChoiceLocation;
+	private ChoiceBox<String> ChoiceLocation;
 
 	
 	//Pantalla principal en donde se muestra o añade el contenido
@@ -27,10 +27,12 @@ public class InicioController {
 	/*------- INICIALIZADOR -----------------------------------------------------------------------------------------------------*/
 	private void initialize() {
 
+		System.out.print(ChoiceLocation);
 		/* -- CHOICE BOX -------------------------------------------------------------------------------------------- */
 		// Para añadir items al choiceBox
 		ChoiceLocation.getItems().addAll("España", "Francia", "Reino Unido", "Alemania", "Italia", "Polonia", "Austria",
 				"Hungría");
+		
 		// Para poner por defecto una opción
 		ChoiceLocation.setValue("España");
 	}
