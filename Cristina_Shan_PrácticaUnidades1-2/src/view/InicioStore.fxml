@@ -204,7 +204,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="836.0" layoutY="8.0" mnemonicParsing="false">
+            <Button layoutX="836.0" layoutY="8.0" mnemonicParsing="false" onAction="#VolverInicio">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0">
                      <image>

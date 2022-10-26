@@ -107,6 +107,7 @@ public class MenuController {
 	// Pantalla principal en la que se añade o quita contenido
 	private BorderPane rootLayout;
   
+	/* -- INICIALIZADOR -------------------------------------------------------------------------------------------- */
     @FXML
     private void initialize() {
     	
@@ -124,7 +125,7 @@ public class MenuController {
     	TablaLista.setItems(data);  
     }
     
-    //Abrimos en otra pantalla nuestro Form Controller
+    ///* -- MOSTRAR EL FORMULARIO MEDIANTE UN MODAL -------------------------------------------------------------------------------------------- */
     @FXML
     private void abrirFormulario(ActionEvent event) {    	
     	try {
@@ -141,6 +142,29 @@ public class MenuController {
     		  stage.initModality(Modality.APPLICATION_MODAL);
     		  stage.setScene(scene);
     		  stage.showAndWait();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    
+    /* -- ABRE LA GUÍA -------------------------------------------------------------------------------------------- */
+    @FXML
+    void abrirGuia(ActionEvent event) {
+    	try {
+    		
+  		  FXMLLoader loader=new FXMLLoader(getClass().getResource("/view/Guia.fxml"));
+  		  //Se carga la venta
+  		  Parent root=loader.load();
+
+  		  //crear una escena que viene del padre
+  		  Scene scene =new Scene(root);
+  		  Stage stage= new Stage();
+
+  		  //Modal hasta que no termine con el formulario no me deja volver a la ventana anterior
+  		  stage.initModality(Modality.APPLICATION_MODAL);
+  		  stage.setScene(scene);
+  		  stage.showAndWait();
 
 		} catch (IOException e) {
 			e.printStackTrace();

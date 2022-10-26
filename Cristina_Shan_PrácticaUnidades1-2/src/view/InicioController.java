@@ -20,15 +20,14 @@ public class InicioController {
 	@FXML
 	private ChoiceBox<Object> ChoiceLocation;
 
+	
+	//Pantalla principal en donde se muestra o añade el contenido
 	private BorderPane rootInicio;
 
+	/*------- INICIALIZADOR -----------------------------------------------------------------------------------------------------*/
 	private void initialize() {
 
-		/*
-		 * CHOICE BOX
-		 * -----------------------------------------------------------------------------
-		 * ---------------------------------------------------
-		 */
+		/* -- CHOICE BOX -------------------------------------------------------------------------------------------- */
 		// Para añadir items al choiceBox
 		ChoiceLocation.getItems().addAll("España", "Francia", "Reino Unido", "Alemania", "Italia", "Polonia", "Austria",
 				"Hungría");
@@ -36,6 +35,7 @@ public class InicioController {
 		ChoiceLocation.setValue("España");
 	}
 
+	/* -- MOSTRAR LA PÁGINA DE SERVICIO AL CLIENTE -------------------------------------------------------------------------------------------- */
 	@FXML
 	void AyudaCliente(ActionEvent event) {
 		try {
@@ -51,7 +51,8 @@ public class InicioController {
 		}
 
 	}
-
+	
+	/* -- NOS ABRA EL CENTRO DE ADMINISTRACIÓN -------------------------------------------------------------------------------------------- */
 	@FXML
 	void AbrirListas(ActionEvent event) {
 		try {
@@ -74,16 +75,16 @@ public class InicioController {
 		}
 	}
 
+	/* -- REDIRECCIÓN A LA PÁGINA DE INICIO -------------------------------------------------------------------------------------------- */
 	@FXML
 	void VolverInicio(ActionEvent event) {
-
 		// Cargo la vista
 		try {
 			Node source = (Node) event.getSource();
 			Stage stage = (Stage) source.getScene().getWindow();
 			// Cargamos el ARCHIVO
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MenuController.class.getResource("/view/inicio.fxml"));
+			loader.setLocation(InicioController.class.getResource("/view/InicioStore.fxml"));
 			rootInicio = (BorderPane) loader.load();
 			stage.setTitle("Inicio");
 			InicioController IniCon = loader.getController();
@@ -96,9 +97,9 @@ public class InicioController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
+	/*-- GETTERS Y SETTERS ------------------------------------------------------------------------------------------------------*/
 	public BorderPane getRootLayout() {
 		return rootInicio;
 	}

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18">
+   <children>
+      <TabPane layoutY="-1.0" prefHeight="600.0" prefWidth="801.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Tab 1: Incio">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="311.0" fitWidth="456.0" layoutX="23.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/Pantalla_Inicio.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER" layoutX="429.0" layoutY="23.0" prefHeight="317.0" prefWidth="342.0" spacing="5.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pantalla de inicio: " wrappingWidth="327.7366943359375">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nos muestra como sería nuestra página princial perteneciente a una joyería." wrappingWidth="322.9366455078125">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nuestro Layout es un BorderPane, en donde en el top esta compuesto de:" wrappingWidth="325.3366241455078">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <ImageView fitHeight="190.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/P1Top.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <HBox layoutX="23.0" layoutY="354.0" prefHeight="186.0" prefWidth="390.0" spacing="10.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="El centro esta compuesto por un AnchorPane donde también tenemos un ScrollPane que hace que nuestro centro pueda seguir viendose a pesar de sobrepasar las dimensiones del BorderPane:" textAlignment="JUSTIFY" wrappingWidth="230.13669204711914">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <ImageView fitHeight="215.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/P1Center.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="429.0" layoutY="354.0" prefHeight="202.0" prefWidth="351.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="El bottom del BorderPane, simula un pie de página fijo. Donde tenemos un menú con un ChoiceBox para elegir la Ubicación y un TextArea donde el usuario podría poner su correo." textAlignment="JUSTIFY" wrappingWidth="191.8116455078125">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <ImageView fitHeight="205.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/P1Bot.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Tab 2: Servicio al cliente">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="246.0" fitWidth="304.0" layoutX="10.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/Pantalla_CentroAyuda.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="334.0" layoutY="22.0" prefHeight="200.0" prefWidth="434.0" spacing="5.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pantalla del Servicio al Cliente">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Esta es una pantalla que simularia la página de atención al cliente." wrappingWidth="413.91064453125">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Como podemos ver tiene un imagen y a su lado un texto indicando de que va la página. " wrappingWidth="426.6663818359375">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Luego tiene unos icono indicando información y sitios de ayuda.">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Por último la lo tipico de una serie de preguntas con sus respuestas.">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <ImageView fitHeight="289.0" fitWidth="297.0" layoutX="508.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/P2.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="30.0" layoutY="286.0" prefHeight="257.0" prefWidth="454.0" spacing="5.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Creamos un Hbox que nos servira para alinear la imagen y el texto. Le ponemos un color de fondo para que no se diferencie bien la sección." wrappingWidth="452.02813720703125">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Para que el texto dentro del Hbox nos salga centrado, insertamos un VBox que nos ayudará con el proceso." wrappingWidth="446.1367378234863">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Creamos un GridPane de 4x4 para conseguir que las cosas nos queden en un mismo espacio. Les añadimos un AnchorPane para que queden centrados." wrappingWidth="448.1976776123047">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ponemo un rectangulo para simular una línea de separación." wrappingWidth="438.2335968017578">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Añadimos un Accordion para crear nuestra sección de &quot;preguntas frecuentes&quot; con sus respuestas." wrappingWidth="446.0245819091797">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Tab 3: Centro de Administración">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="235.0" fitWidth="303.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/Pantalla_Administracion.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="344.0" layoutY="23.0" prefHeight="200.0" prefWidth="419.0" spacing="5.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pantalla de administración: ">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Esta pantalla simula el centro de administración de los datos." wrappingWidth="382.859375">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Podemos ver un listado de información sobre las joyas. " wrappingWidth="399.73681640625">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="En la parte izquierda se muestra unos botonos con las siguientes categorías: default (muestra la tabla por defecto), mujer (listado de joyas solo de mujer), hombre (listado de joyas solo de hombres), niños (datos de joyas para niños) y sets (listado de sets)." textAlignment="JUSTIFY" wrappingWidth="417.0101318359375">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="39.0" layoutY="286.0" prefHeight="230.0" prefWidth="471.0" spacing="5.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Como podemos ver nuestra base es  un BorderPane, donde arriba tenemos un menú y en la izquierda una especie de menú según categorías con botonos." textAlignment="JUSTIFY" wrappingWidth="446.97145080566406">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nuestro centro esta compuesto por un TableView, de 5 columnas: código, nombre, materiales, cantidad de stock y precio." textAlignment="JUSTIFY" wrappingWidth="442.1367073059082">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <ImageView fitHeight="252.0" fitWidth="269.0" layoutX="532.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/P3.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="tab 4: Formulario">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="193.0" fitWidth="287.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/Pantalla_Formulario.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER" layoutX="275.0" layoutY="11.0" prefHeight="200.0" prefWidth="498.0" spacing="5.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pantalla del formulario:" wrappingWidth="470.42369079589844">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pantalla para insertar los datos de la tabla, que podemos ver en el Tab 3." wrappingWidth="472.53668212890625">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tiene de base un BorderPane:" wrappingWidth="474.6285400390625">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/P4.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="223.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/P4Left.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="24.0" layoutY="266.0" prefHeight="289.0" prefWidth="187.0" spacing="5.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dentro del AnchoPane del centro, hay un BorderPane, donde a la izquierda tenemos 2 VBox." textAlignment="JUSTIFY" wrappingWidth="202.8703155517578">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="El primero simula un inicio de sesión." textAlignment="JUSTIFY" wrappingWidth="199.37672424316406">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="El segundo nos da la opción de añadir un comentario con el TextField." textAlignment="JUSTIFY" wrappingWidth="199.73675918579102">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="439.0" layoutY="244.0" prefHeight="310.0" prefWidth="170.0" spacing="5.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dentro del segundo BorderPane, en el centro tenemos un AnchorPane para situar las cosas a gusto." textAlignment="JUSTIFY" wrappingWidth="164.79998779296875">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Para simular un formulario, se inserta un GirdPane para que los Label y TextField  esten al mismo nivel." textAlignment="JUSTIFY" wrappingWidth="166.93670654296875">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="También se usan las opciones de CheckBox y RadioButton." textAlignment="JUSTIFY" wrappingWidth="170.4000244140625">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <ImageView fitHeight="304.0" fitWidth="186.0" layoutX="609.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/P4Center.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
