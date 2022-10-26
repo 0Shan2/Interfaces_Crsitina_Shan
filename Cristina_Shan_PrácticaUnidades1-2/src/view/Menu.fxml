@@ -32,7 +32,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Centro">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Inicio" />
+                    <MenuItem mnemonicParsing="false" onAction="#abrirInicio" text="Inicio" />
                         <MenuItem mnemonicParsing="false" text="Sobre SIX" />
                   </items>
                 </Menu>
