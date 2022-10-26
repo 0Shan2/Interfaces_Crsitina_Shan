@@ -25,9 +25,6 @@ public class MenuController {
 
 	@FXML
 	    private TableView<Person> TablaLista;
-	 
-	 @FXML
-	    private TableView<Person> tablaHombre;
 	    
 	    @FXML
 	    private TableColumn<Person, String> ColCodigo;
@@ -50,17 +47,62 @@ public class MenuController {
 	    	    new Person("R00002", "Else Hoop Ring", "Platino con dos diamantes brillantes redondos", 2, 2125),	
 	    	    new Person("R00003", "X Atlas Ring", "Oro rosa de 18k con más de 40 diamantes brillantes redondos", 5, 2300),
 	    	    new Person("C00001", "Victoria Pendant", "Platino con diamantes marquesa", 3, 6500),
-	    	    new Person("C00002", "T&C Pendant", "Oro de 18k y platino con diamantes brillantes redondos", 1, 2950)
+	    	    new Person("C00002", "T&C Pendant", "Oro de 18k y platino con diamantes brillantes redondos", 1, 2950),
+	    	    new Person("HP00001", "Man's Pulsera", "Oro de 18k", 2, 3250),
+	    	    new Person("HR00001", "Hoop Ring", "Platino", 1, 1125),	
+	    	    new Person("HC00001", "X Atlas", "Oro nrego de 18k con perlas incustradas", 5, 5300),
+	    	    new Person("HPe00001", "Pendant Thor", "Platino con diamantes marquesa", 2, 6500),
+	    	    new Person("HPe00002", "Pendant Scporpio", "Diamantes brillantes redondos", 3, 2200),
+	    	    new Person("NP00001", "Pulsera TT", "Oro rosa con diamantes pequeños", 5, 1950),
+	    	    new Person("NP00002", "Else Snow", "Oro blanco con un bonito diseño de invirno", 2, 1925),	
+	    	    new Person("NC00001", "Terra Colgat", "Oro y plata", 5, 1200),
+	    	    new Person("NPe00001", "Little Magic Pendant", "Platino con diamantes marquesa", 3, 1500),
+	    	    new Person("NPe00002", "Junior Senior", "Platino con diamantes brillantes estrellados", 1, 1950),
+	    	    new Person("SP00001", "Marry Sets", "Oro de 18k y platino con diamantes brillantes redondos  y rubis incrustrados", 5, 9250),
+	    	    new Person("SP00002", "Wedding pink Sets", "Oro blanco de 18k", 2, 8125),	
+	    	    new Person("SC00001", "Valentine Sets", "Oro rosa de 18k con más de 40 diamantes brillantes redondos", 5, 5300),
+	    	    new Person("SPe00001", "Brithday Sets", "Diamantes marquesa", 3, 1500),
+	    	    new Person("SPe00002", "Hojarldre Sets", "Platino con esmeraldas", 1, 1950)
+	    	    
 	    	);
 	    
-	    // Lista auxiliar para TableHombre
-	    private ObservableList<Person> data2 = FXCollections.observableArrayList(
-	    	    new Person("P00001", "T&C Ring", "Oro de 18k y platino con diamantes brillantes redondos", 5, 3250),
-	    	    new Person("P00002", "Else Hoop Ring", "Platino con dos diamantes brillantes redondos", 2, 2125),	
-	    	    new Person("C00001", "X Atlas Ring", "Oro rosa de 18k con más de 40 diamantes brillantes redondos", 5, 2300),
-	    	    new Person("Pe00001", "Victoria Pendant", "Platino con diamantes marquesa", 3, 6500),
-	    	    new Person("Pe00002", "T&C Pendant", "Oro de 18k y platino con diamantes brillantes redondos", 1, 2950)
+	    //Lista auxiliar para TablaMujer
+	    private ObservableList<Person> dataMujer = FXCollections.observableArrayList(
+	    	    new Person("R00001", "T&C Ring", "Oro de 18k y platino con diamantes brillantes redondos", 5, 3250),
+	    	    new Person("R00002", "Else Hoop Ring", "Platino con dos diamantes brillantes redondos", 2, 2125),	
+	    	    new Person("R00003", "X Atlas Ring", "Oro rosa de 18k con más de 40 diamantes brillantes redondos", 5, 2300),
+	    	    new Person("C00001", "Victoria Pendant", "Platino con diamantes marquesa", 3, 6500),
+	    	    new Person("C00002", "T&C Pendant", "Oro de 18k y platino con diamantes brillantes redondos", 1, 2950)
+       );
+	    
+	    // Lista auxiliar para TableHombre 
+	    private ObservableList<Person> dataHombre = FXCollections.observableArrayList(
+	    	    new Person("HP00001", "Man's Pulsera", "Oro de 18k", 2, 3250),
+	    	    new Person("HR00001", "Hoop Ring", "Platino", 1, 1125),	
+	    	    new Person("HC00001", "X Atlas", "Oro nrego de 18k con perlas incustradas", 5, 5300),
+	    	    new Person("HPe00001", "Pendant Thor", "Platino con diamantes marquesa", 2, 6500),
+	    	    new Person("HPe00002", "Pendant Scporpio", "Diamantes brillantes redondos", 3, 2200)
 	    	);
+	    
+	 // Lista auxiliar para Table para los Niños
+	    private ObservableList<Person> dataN = FXCollections.observableArrayList(
+	    	    new Person("NP00001", "Pulsera TT", "Oro rosa con diamantes pequeños", 5, 1950),
+	    	    new Person("NP00002", "Else Snow", "Oro blanco con un bonito diseño de invirno", 2, 1925),	
+	    	    new Person("NC00001", "Terra Colgat", "Oro y plata", 5, 1200),
+	    	    new Person("NPe00001", "Little Magic Pendant", "Platino con diamantes marquesa", 3, 1500),
+	    	    new Person("NPe00002", "Junior Senior", "Platino con diamantes brillantes estrellados", 1, 1950)
+	    	);
+	    
+	 // Lista auxiliar para Table para los Sets
+	    private ObservableList<Person> dataSets = FXCollections.observableArrayList(
+	    	    new Person("SP00001", "Marry Sets", "Oro de 18k y platino con diamantes brillantes redondos  y rubis incrustrados", 5, 9250),
+	    	    new Person("SP00002", "Wedding pink Sets", "Oro blanco de 18k", 2, 8125),	
+	    	    new Person("SC00001", "Valentine Sets", "Oro rosa de 18k con más de 40 diamantes brillantes redondos", 5, 5300),
+	    	    new Person("SPe00001", "Brithday Sets", "Diamantes marquesa", 3, 1500),
+	    	    new Person("SPe00002", "Hojarldre Sets", "Platino con esmeraldas", 1, 1950)
+	    	);
+	    
+	    
 	
 	// Pantalla principal en la que se añade o quita contenido
 	private BorderPane rootLayout;
@@ -79,8 +121,7 @@ public class MenuController {
     	ColCodigo.setCellFactory(TextFieldTableCell.forTableColumn());
         
         // Se rellena la tabla con objetos de la clase Person
-    	TablaLista.setItems(data); 
-    	tablaHombre.setItems(data2); 
+    	TablaLista.setItems(data);  
     }
     
     //Abrimos en otra pantalla nuestro Form Controller
@@ -107,20 +148,29 @@ public class MenuController {
     }
     
     @FXML
+    void abrirlista(ActionEvent event) {
+    	TablaLista.setItems(data);
+    }
+    
+    @FXML
+    void abrirTablaMujer(ActionEvent event) {
+    	TablaLista.setItems(dataMujer);  
+    }
+    
+    @FXML
     void abrirTablaHombre(ActionEvent event) {
-    	try {
-			// Cargamos el archivo Page Form
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MenuController.class.getResource("/view/TablaHombre.fxml"));
-			AnchorPane listadoControles = (AnchorPane) loader.load();
-
-			// Se sitúa en el centro del diseño principal
-			rootLayout.setCenter(listadoControles);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+    	TablaLista.setItems(dataHombre); 
+    }
+    
+    @FXML
+    void abrirTablaN(ActionEvent event) {
+    	TablaLista.setItems(dataN);
     }
 
+    @FXML
+    void abrirTablaSets(ActionEvent event) {
+    	TablaLista.setItems(dataSets);
+    }
     
     @FXML
     private void cerrarListado(ActionEvent event) {    	
