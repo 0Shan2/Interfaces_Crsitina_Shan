@@ -7,7 +7,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -17,293 +16,313 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <ScrollPane layoutX="-2.0" layoutY="-3.0" prefHeight="700.0" prefWidth="900.0">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1000.0" prefWidth="878.0">
-                     <children>
-                        <Rectangle arcHeight="2.0" arcWidth="2.0" fill="#b2c5ce" height="5.0" layoutX="-12.0" layoutY="594.0" stroke="TRANSPARENT" strokeType="INSIDE" width="900.0" />
-                        <Text layoutX="31.0" layoutY="629.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PREGUNTAS FRECUENTES">
-                           <font>
-                              <Font name="Georgia Bold" size="18.0" />
-                           </font>
-                        </Text>
-                        <Accordion layoutX="64.0" layoutY="645.0" prefHeight="500.0" prefWidth="770.0">
-                          <panes>
-                            <TitledPane animated="false" prefWidth="361.0" text="¿Cómo puedo realizar cambios o devoluciones?">
-                              <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                       <children>
-                                          <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIX ofrece envío gratuito para cualquier artículo que desee devolver. Simplemente use la etiqueta de devolución si se adjunta en su entrega o visita el link a continuación para imprimir una etiqueta de devolución. Luego deje su paquete en la ubicación de UPS más cercana." wrappingWidth="708.5367164611816" />
-                                          <Hyperlink layoutX="14.0" layoutY="62.0" text="Devoluciones SIX" />
-                                       </children>
-                                    </AnchorPane>
-                              </content>
-                            </TitledPane>
-                            <TitledPane animated="false" prefHeight="171.0" prefWidth="770.0" text="¿Qué opciones de envío están disponibles en SIX?">
-                              <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="113.0" prefWidth="769.0">
-                                       <children>
-                                          <VBox layoutX="17.0" layoutY="14.0" prefHeight="210.0" prefWidth="736.0">
-                                             <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Envío terrestre estándar: 0€">
-                                                   <font>
-                                                      <Font name="System Bold Italic" size="12.0" />
-                                                   </font>
-                                                </Text>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Disponible en todos los pedidos. Por favor, espere de 3 a 5 días hábiles para recibir sus artículos. Es posible que los artículos pedidos juntos no siempre se envíen juntos." wrappingWidth="738.9367179870605" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Envío Express con firma en la entrega: 0€">
-                                                   <font>
-                                                      <Font name="System Bold Italic" size="12.0" />
-                                                   </font>
-                                                </Text>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Disponible en todos los envíos superiores a 1000€. Por favor, espere 1-2 días hábiles para recibir sus artículos. Es posible que los artículos pedidos juntos no siempre se envíen juntos." wrappingWidth="736.5366477966309" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Entrega al día soguiente: 20€ sin firma o con firma">
-                                                   <font>
-                                                      <Font name="System Bold Italic" size="12.0" />
-                                                   </font>
-                                                </Text>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- Los pedidos realizados antes de los 20:00 PM de lunes a viernes se entregarán el día siguiente." wrappingWidth="718.1367607116699" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- Los pedidos realizados el sábado se entregarán el lunes." wrappingWidth="694.1367683410645" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- La entrega en domingos y festivos no está dispoible. " wrappingWidth="403.8789520263672" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- La entrega para artículos personalizados no se ofrece." wrappingWidth="589.3368034362793" />
-                                             </children>
-                                          </VBox>
-                                       </children>
-                                    </AnchorPane>
-                              </content>
-                            </TitledPane>
-                            <TitledPane animated="false" text="¿Puedo enviar mi pedido a una ubicación internacional?">
-                              <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                       <children>
-                                          <VBox layoutX="10.0" layoutY="14.0" prefHeight="94.0" prefWidth="752.0">
-                                             <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="No, actualmento solo podemos aceptar pedidos en línea a direcciones de envío dentro de España." wrappingWidth="541.336742401123" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SIX ofrece servicios de comercio electrónico a otros países Europeos, sin embargo para ello visitar la página oficial de SIX de cada país." wrappingWidth="726.1367454528809" />
-                                             </children>
-                                          </VBox>
-                                       </children>
-                                    </AnchorPane>
-                              </content>
-                            </TitledPane>
-                              <TitledPane animated="false" text="¿Qué es el grabado?">
-                                <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                       <children>
-                                          <VBox layoutX="19.0" layoutY="14.0" prefHeight="200.0" prefWidth="722.0">
-                                             <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SIX ofrece grabado estándar y grabado a mano en piezas seleccionadas de SIX. Podrá ver la lista de artículos que pueden ser grabados a continuación." wrappingWidth="729.3367347717285" />
-                                                <Hyperlink text="Lista de artículos" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Grabado estándar: utiliza tecnología para crear los caracteres." wrappingWidth="507.73678970336914" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Grabado a mano: cada pieza es única, lo que permite el carácter diferente de cada grabador. Está técnica permite un grabado más durarero y profundo." wrappingWidth="731.736743927002" />
-                                             </children>
-                                          </VBox>
-                                       </children>
-                                    </AnchorPane>
-                                </content>
-                              </TitledPane>
-                              <TitledPane animated="false" text="¿Hay servicio de recogida en tienda?">
-                                <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                       <children>
-                                          <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="La recogida en la tienda de artículos pedidos en línea está actualmente disponible en nuestras tiendas física de Madrid y Barcelona únicamente." wrappingWidth="712.5367546081543" />
-                                       </children>
-                                    </AnchorPane>
-                                </content>
-                              </TitledPane>
-                              <TitledPane animated="false" text="¿Cómo cuido mis joyas?">
-                                <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                       <children>
-                                          <VBox layoutX="14.0" layoutY="14.0" prefHeight="198.0" prefWidth="739.0" spacing="10.0">
-                                             <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Con el tiempo, las joyas puede convertirse en una reliquia familiar atesorada si se cuida adecuadamente. El polvo, la contaminación y el desgaste diario conspiran para nublar el brillo de las piedras preciosas. La superficie de las joyas de oro, platino y plata puede opacarse. Las puntas y cierres desgastados por el tiempo pueden resultar en la pérdida de una piedra o una pieza entera de joyería." wrappingWidth="733.3367500305176" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Se recomiendan limpiezas profesionales tan a menudo como una vez al año. Le recomendamos que nos traiga sus joyas de SIX para un servicio profesional. Nuestro personal está bien informado y tiene experiencia en todos los aspectos del cuidado de la joyería, incluida la limpieza de piedras preciosas, el encordado de perlas y la reparación de cierres y aretes." wrappingWidth="727.7367744445801" />
-                                             </children>
-                                          </VBox>
-                                       </children>
-                                    </AnchorPane>
-                                </content>
-                              </TitledPane>
-                          </panes>
-                        </Accordion>
-                        <HBox layoutX="20.0" layoutY="22.0" prefHeight="175.0" prefWidth="858.0">
-                           <children>
-                              <ImageView fitHeight="234.0" fitWidth="394.0">
-                                 <image>
-                                    <Image url="@../img/banner.jpeg" />
-                                 </image>
-                              </ImageView>
-                              <AnchorPane prefHeight="234.0" prefWidth="462.0" style="-fx-background-color: fffef6;">
+<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ScrollPane prefHeight="700.0" prefWidth="900.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1000.0" prefWidth="878.0">
+               <children>
+                  <Rectangle arcHeight="2.0" arcWidth="2.0" fill="#b2c5ce" height="5.0" layoutX="-12.0" layoutY="594.0" stroke="TRANSPARENT" strokeType="INSIDE" width="900.0" />
+                  <Text layoutX="31.0" layoutY="629.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PREGUNTAS FRECUENTES">
+                     <font>
+                        <Font name="Georgia Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Accordion layoutX="64.0" layoutY="645.0" prefHeight="500.0" prefWidth="770.0">
+                    <panes>
+                      <TitledPane animated="false" prefWidth="361.0" text="¿Cómo puedo realizar cambios o devoluciones?">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <VBox alignment="CENTER" layoutX="23.0" layoutY="25.0" prefHeight="192.0" prefWidth="424.0">
+                                    <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIX ofrece envío gratuito para cualquier artículo que desee devolver. Simplemente use la etiqueta de devolución si se adjunta en su entrega o visita el link a continuación para imprimir una etiqueta de devolución. Luego deje su paquete en la ubicación de UPS más cercana." wrappingWidth="708.5367164611816" />
+                                    <Hyperlink layoutX="14.0" layoutY="62.0" text="Devoluciones SIX" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </TitledPane>
+                      <TitledPane animated="false" prefHeight="171.0" prefWidth="770.0" text="¿Qué opciones de envío están disponibles en SIX?">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="113.0" prefWidth="769.0">
+                                 <children>
+                                    <VBox layoutX="17.0" layoutY="14.0" prefHeight="210.0" prefWidth="736.0">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SIX A SU SERVICIO">
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Envío terrestre estándar: 0€">
                                              <font>
-                                                <Font name="Georgia Bold" size="18.0" />
+                                                <Font name="System Bold Italic" size="12.0" />
                                              </font>
                                           </Text>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="No dudes en poner a disposición de nuetro servicio de atención al cliente, pues ninguna duda es insignificante. " wrappingWidth="360.0">
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Disponible en todos los pedidos. Por favor, espere de 3 a 5 días hábiles para recibir sus artículos. Es posible que los artículos pedidos juntos no siempre se envíen juntos." wrappingWidth="738.9367179870605" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Envío Express con firma en la entrega: 0€">
                                              <font>
-                                                <Font size="14.0" />
+                                                <Font name="System Bold Italic" size="12.0" />
                                              </font>
                                           </Text>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nuestro equipo esta más que dispuesto a responderte y ayudarte en tus necesidades, aúnque sean recomendaciones." wrappingWidth="360.0">
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Disponible en todos los envíos superiores a 1000€. Por favor, espere 1-2 días hábiles para recibir sus artículos. Es posible que los artículos pedidos juntos no siempre se envíen juntos." wrappingWidth="736.5366477966309" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Entrega al día soguiente: 20€ sin firma o con firma">
                                              <font>
-                                                <Font size="14.0" />
+                                                <Font name="System Bold Italic" size="12.0" />
                                              </font>
                                           </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- Los pedidos realizados antes de los 20:00 PM de lunes a viernes se entregarán el día siguiente." wrappingWidth="718.1367607116699" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- Los pedidos realizados el sábado se entregarán el lunes." wrappingWidth="694.1367683410645" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- La entrega en domingos y festivos no está dispoible. " wrappingWidth="403.8789520263672" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- La entrega para artículos personalizados no se ofrece." wrappingWidth="589.3368034362793" />
                                        </children>
                                     </VBox>
                                  </children>
                               </AnchorPane>
-                           </children>
-                        </HBox>
-                        <GridPane alignment="CENTER" layoutX="68.0" layoutY="315.0" prefHeight="226.0" prefWidth="738.0">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
+                        </content>
+                      </TitledPane>
+                      <TitledPane animated="false" text="¿Puedo enviar mi pedido a una ubicación internacional?">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox layoutX="10.0" layoutY="14.0" prefHeight="94.0" prefWidth="752.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="No, actualmento solo podemos aceptar pedidos en línea a direcciones de envío dentro de España." wrappingWidth="541.336742401123" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SIX ofrece servicios de comercio electrónico a otros países Europeos, sin embargo para ello visitar la página oficial de SIX de cada país." wrappingWidth="726.1367454528809" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </TitledPane>
+                        <TitledPane animated="false" text="¿Qué es el grabado?">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox layoutX="19.0" layoutY="14.0" prefHeight="200.0" prefWidth="722.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SIX ofrece grabado estándar y grabado a mano en piezas seleccionadas de SIX. Podrá ver la lista de artículos que pueden ser grabados a continuación." wrappingWidth="729.3367347717285" />
+                                          <Hyperlink text="Lista de artículos" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Grabado estándar: utiliza tecnología para crear los caracteres." wrappingWidth="507.73678970336914" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Grabado a mano: cada pieza es única, lo que permite el carácter diferente de cada grabador. Está técnica permite un grabado más durarero y profundo." wrappingWidth="731.736743927002" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                        <TitledPane animated="false" text="¿Hay servicio de recogida en tienda?">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="La recogida en la tienda de artículos pedidos en línea está actualmente disponible en nuestras tiendas física de Madrid y Barcelona únicamente." wrappingWidth="712.5367546081543" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                        <TitledPane animated="false" text="¿Cómo cuido mis joyas?">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox layoutX="14.0" layoutY="14.0" prefHeight="198.0" prefWidth="739.0" spacing="10.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Con el tiempo, las joyas puede convertirse en una reliquia familiar atesorada si se cuida adecuadamente. El polvo, la contaminación y el desgaste diario conspiran para nublar el brillo de las piedras preciosas. La superficie de las joyas de oro, platino y plata puede opacarse. Las puntas y cierres desgastados por el tiempo pueden resultar en la pérdida de una piedra o una pieza entera de joyería." wrappingWidth="733.3367500305176" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Se recomiendan limpiezas profesionales tan a menudo como una vez al año. Le recomendamos que nos traiga sus joyas de SIX para un servicio profesional. Nuestro personal está bien informado y tiene experiencia en todos los aspectos del cuidado de la joyería, incluida la limpieza de piedras preciosas, el encordado de perlas y la reparación de cierres y aretes." wrappingWidth="727.7367744445801" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                    </panes>
+                  </Accordion>
+                  <HBox layoutX="20.0" layoutY="22.0" prefHeight="175.0" prefWidth="858.0">
+                     <children>
+                        <ImageView fitHeight="234.0" fitWidth="394.0">
+                           <image>
+                              <Image url="@../img/banner.jpeg" />
+                           </image>
+                        </ImageView>
+                        <AnchorPane prefHeight="234.0" prefWidth="462.0" style="-fx-background-color: fffef6;">
                            <children>
-                              <AnchorPane prefHeight="62.0" prefWidth="186.0">
+                              <VBox alignment="CENTER" layoutX="23.0" layoutY="25.0" prefHeight="192.0" prefWidth="424.0">
                                  <children>
-                                    <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="68.0" layoutY="1.0">
-                                       <image>
-                                          <Image url="@../img/telefono.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
-                                 <children>
-                                    <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="68.0" layoutY="1.0">
-                                       <image>
-                                          <Image url="@../img/tienda.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
-                                 <children>
-                                    <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="68.0" layoutY="1.0">
-                                       <image>
-                                          <Image url="@../img/agenda.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
-                                 <children>
-                                    <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="68.0" layoutY="1.0">
-                                       <image>
-                                          <Image url="@../img/chat.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </AnchorPane>
-                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contacto" />
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="900 123 321" />
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Visitanos" />
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" En la joyería SIX o distribuidor autorizado. " textAlignment="CENTER" wrappingWidth="166.93670845031738" />
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Citas" />
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pide cita o gestionala." wrappingWidth="122.13665199279785" />
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Asistente virtual" />
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chatea con nosotros." wrappingWidth="118.93677711486816" />
-                                 </children>
-                              </VBox>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
-                                 <children>
-                                    <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="68.0" layoutY="1.0">
-                                       <image>
-                                          <Image url="@../img/regalo.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                 <children>
-                                    <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="68.0" layoutY="1.0">
-                                       <image>
-                                          <Image url="@../img/diamante.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                                 <children>
-                                    <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="68.0" layoutY="1.0">
-                                       <image>
-                                          <Image url="@../img/regla.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                                 <children>
-                                    <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="68.0" layoutY="1.0">
-                                       <image>
-                                          <Image url="@../img/mantenimiento.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </AnchorPane>
-                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Consulta de regalos" />
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Estamos a tu disposición para ayudarte a encontrar el regalo ideal." textAlignment="CENTER" wrappingWidth="182.93677711486816" />
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Consulta de diamantes" />
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Los expertos de SIX te ayudarán en cualquier duda sobre diamantes." textAlignment="CENTER" wrappingWidth="160.53674507141113" />
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Guía de tallas" />
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Encuentra la talla ideal" wrappingWidth="126.93669128417969" />
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mantenimiento" />
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Conserve la belleza de las joyas." textAlignment="CENTER" wrappingWidth="143.73670387268066" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SIX A SU SERVICIO">
+                                       <font>
+                                          <Font name="Georgia Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="No dudes en poner a disposición de nuetro servicio de atención al cliente, pues ninguna duda es insignificante. " wrappingWidth="360.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nuestro equipo esta más que dispuesto a responderte y ayudarte en tus necesidades, aúnque sean recomendaciones." wrappingWidth="360.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
                                  </children>
                               </VBox>
                            </children>
-                        </GridPane>
+                        </AnchorPane>
                      </children>
-                  </AnchorPane>
-              </content>
-            </ScrollPane>
-         </children>
-      </AnchorPane>
-   </center>
-</BorderPane>
+                  </HBox>
+                  <GridPane alignment="CENTER" layoutX="68.0" layoutY="315.0" prefHeight="226.0" prefWidth="738.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="62.0" prefWidth="186.0">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="68.0" layoutY="1.0">
+                                 <image>
+                                    <Image url="@../img/telefono.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="68.0" layoutY="1.0">
+                                 <image>
+                                    <Image url="@../img/tienda.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="68.0" layoutY="1.0">
+                                 <image>
+                                    <Image url="@../img/agenda.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="68.0" layoutY="1.0">
+                                 <image>
+                                    <Image url="@../img/chat.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contacto">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="900 123 321" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Visitanos">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" En la joyería SIX o distribuidor autorizado. " textAlignment="CENTER" wrappingWidth="166.93670845031738" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Citas">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pide cita o gestionala." wrappingWidth="122.13665199279785" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Asistente virtual">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chatea con nosotros." wrappingWidth="118.93677711486816" />
+                           </children>
+                        </VBox>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="68.0" layoutY="1.0">
+                                 <image>
+                                    <Image url="@../img/regalo.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="68.0" layoutY="1.0">
+                                 <image>
+                                    <Image url="@../img/diamante.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="68.0" layoutY="1.0">
+                                 <image>
+                                    <Image url="@../img/regla.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="68.0" layoutY="1.0">
+                                 <image>
+                                    <Image url="@../img/mantenimiento.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Consulta de regalos">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Estamos a tu disposición para ayudarte a encontrar el regalo ideal." textAlignment="CENTER" wrappingWidth="182.93677711486816" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Consulta de diamantes">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Los expertos de SIX te ayudarán en cualquier duda sobre diamantes." textAlignment="CENTER" wrappingWidth="160.53674507141113" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Guía de tallas">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Encuentra la talla ideal" wrappingWidth="126.93669128417969" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mantenimiento">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Conserve la belleza de las joyas." textAlignment="CENTER" wrappingWidth="143.73670387268066" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

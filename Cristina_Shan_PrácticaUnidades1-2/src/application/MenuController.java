@@ -147,6 +147,8 @@ public class MenuController {
 		}
     }
     
+    
+    
     @FXML
     void abrirlista(ActionEvent event) {
     	TablaLista.setItems(data);
@@ -170,6 +172,28 @@ public class MenuController {
     @FXML
     void abrirTablaSets(ActionEvent event) {
     	TablaLista.setItems(dataSets);
+    }
+    
+    @FXML
+    void abrirInicio(ActionEvent event) {
+    	try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/InicioStore.fxml"));
+			// Se carga la venta
+			Parent root = loader.load();
+
+			// crear una escena que viene del padre
+			Scene scene = new Scene(root);
+			Stage stage = new Stage();
+
+			// Modal hasta que no termine con el formulario no me deja volver a la ventana
+			// anterior
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.setScene(scene);
+			stage.showAndWait();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     }
     
     @FXML
