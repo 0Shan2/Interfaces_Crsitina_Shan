@@ -1,4 +1,4 @@
-package application;
+package view;
 
 import java.io.IOException;
 
@@ -38,6 +38,11 @@ public class AdminTablaController {
 
 	    @FXML
 	    private TableColumn<Person, Integer> ColPrecio;
+	    
+	 // Este componente será un diálogo. Campos auxiliares para su gestión
+	    private Stage dialogStage;
+	    private Person person;
+	    private boolean okClicked = false;
 
 	    // Lista auxiliar para TableView
 	    private ObservableList<Person> data = FXCollections.observableArrayList(
@@ -105,8 +110,6 @@ public class AdminTablaController {
 	// Pantalla principal en la que se añade o quita contenido
 	private BorderPane rootLayout;
 	
-	// Referencia a la aplicación principal
-    private Inicio mainApp;
 
 	/* -- INICIALIZADOR -------------------------------------------------------------------------------------------- */
     @FXML
@@ -125,53 +128,6 @@ public class AdminTablaController {
         // Se rellena la tabla con objetos de la clase Person
     	TablaLista.setItems(data);
     }
-
-    ///* -- MOSTRAR EL FORMULARIO MEDIANTE UN MODAL -------------------------------------------------------------------------------------------- */
-    @FXML
-    private void abrirFormulario(ActionEvent event) {
-    	try {
-
-    		  FXMLLoader loader=new FXMLLoader(getClass().getResource("/view/Formulario.fxml"));
-    		  //Se carga la venta
-    		  Parent root=loader.load();
-
-    		  //crear una escena que viene del padre
-    		  Scene scene =new Scene(root);
-    		  Stage stage= new Stage();
-
-    		  //Modal hasta que no termine con el formulario no me deja volver a la ventana anterior
-    		  stage.initModality(Modality.APPLICATION_MODAL);
-    		  stage.setScene(scene);
-    		  stage.showAndWait();
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-    }
-
-    /* -- ABRE LA GUÍA -------------------------------------------------------------------------------------------- */
-    @FXML
-    void abrirGuia(ActionEvent event) {
-    	try {
-
-  		  FXMLLoader loader=new FXMLLoader(getClass().getResource("/view/Guia.fxml"));
-  		  //Se carga la venta
-  		  Parent root=loader.load();
-
-  		  //crear una escena que viene del padre
-  		  Scene scene =new Scene(root);
-  		  Stage stage= new Stage();
-
-  		  //Modal hasta que no termine con el formulario no me deja volver a la ventana anterior
-  		  stage.initModality(Modality.APPLICATION_MODAL);
-  		  stage.setScene(scene);
-  		  stage.showAndWait();
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-    }
-
 
 
     @FXML
@@ -198,7 +154,67 @@ public class AdminTablaController {
     void abrirTablaSets(ActionEvent event) {
     	TablaLista.setItems(dataSets);
     }
+    
+    //Rellenamos los datos para añadirlos
+    public void setPerson(Person person) {
+    	this.person = person;
+    	ColCodigo.setText(person.getCodigo());
+    	ColNombre.setText(person.getNombre());
+    	ColMaterial.setText(person.getMaterial());
+    	ColCantidad.setText(Integer.toString(person.getCantidad_Stock()));
+    	ColPrecio.setText(Integer.toString(person.getPrecio()));
+    }
+    
+    ///* -- ABIRMOS EL FORMULARIO -------------------------------------------------------------------------------------------- */
+    @FXML
+    private void abrirFormulario(ActionEvent event) {
+    	try {
 
+    		  FXMLLoader loader=new FXMLLoader(getClass().getResource("/view/Formulario.fxml"));
+    		  //Se carga la venta
+    		  Parent root=loader.load();
+
+    		  //crear una escena que viene del padre
+    		  Scene scene =new Scene(root);
+    		  Stage stage= new Stage();
+
+    		  //Modal hasta que no termine con el formulario no me deja volver a la ventana anterior
+    		  stage.initModality(Modality.APPLICATION_MODAL);
+    		  stage.setScene(scene);
+    		  stage.setResizable(false);
+    		  stage.showAndWait();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    
+    /* ---- ABRE LA GUÍA -------------------------------------------------------------------------------------------- */
+    @FXML
+    void abrirGuia(ActionEvent event) {
+    	try {
+
+  		  FXMLLoader loader=new FXMLLoader(getClass().getResource("/view/Guia.fxml"));
+  		  //Se carga la venta
+  		  Parent root=loader.load();
+
+  		  //crear una escena que viene del padre
+  		  Scene scene =new Scene(root);
+  		  Stage stage= new Stage();
+
+  		  //Modal hasta que no termine con el formulario no me deja volver a la ventana anterior
+  		  stage.initModality(Modality.APPLICATION_MODAL);
+  		  stage.setScene(scene);
+  		  stage.showAndWait();
+  		  
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    
+    
+    //---------- ABIRIR  INICIO -------------------------------------------------------------------
     @FXML
     void abrirInicio(ActionEvent event) {
     	try {
@@ -235,5 +251,21 @@ public class AdminTablaController {
 	public void setRootLayout(BorderPane rootLayout) {
 		this.rootLayout = rootLayout;
 	}
+	
+	//----------------------------------------------------------------------------------------------------
+	 @FXML
+	    void eliminarForm(ActionEvent event) {
+
+	    }
+
+	    @FXML
+	    void openForm(ActionEvent event) {
+
+	    }
+
+	    @FXML
+	    void updateForm(ActionEvent event) {
+
+	    }
 
 }

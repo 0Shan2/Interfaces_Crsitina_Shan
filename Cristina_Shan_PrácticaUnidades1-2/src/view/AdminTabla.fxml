@@ -12,17 +12,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
-<BorderPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminTablaController">
+<BorderPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AdminTablaController">
    <top>
-      <AnchorPane prefHeight="30.0" prefWidth="200.0" BorderPane.alignment="TOP_RIGHT">
+      <AnchorPane BorderPane.alignment="TOP_RIGHT">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c1e2db" height="40.0" stroke="#c8e6cf" strokeType="INSIDE" width="900.0" />
-            <MenuBar layoutX="715.0" layoutY="5.0" prefHeight="30.0" prefWidth="178.0" style="-fx-background-color: #c1e2db;">
+            <MenuBar layoutX="701.0" layoutY="7.0" style="-fx-background-color: #c1e2db;">
               <menus>
-                <Menu mnemonicParsing="false" text="Editar">
+                <Menu mnemonicParsing="false" text="Formulario">
                   <items>
-                        <MenuItem mnemonicParsing="false" onAction="#abrirFormulario" text="Formulario" />
-                    <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem mnemonicParsing="false" onAction="#openForm" text="Agregar" />
+                    <MenuItem mnemonicParsing="false" onAction="#updateForm" text="Actualizar" />
+                        <MenuItem mnemonicParsing="false" onAction="#eliminarForm" text="Eliminar" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Ayuda">
@@ -57,11 +58,11 @@
    <center>
       <TableView fx:id="TablaLista" prefHeight="650.0" prefWidth="700.0" BorderPane.alignment="CENTER">
         <columns>
-            <TableColumn fx:id="ColCodigo" prefWidth="140.0" text="Código" />
-          <TableColumn fx:id="ColNombre" prefWidth="140.0" text="Nombre" />
-          <TableColumn fx:id="ColMaterial" prefWidth="140.0" text="Materiales" />
-            <TableColumn fx:id="ColCantidad" prefWidth="140.0" text="Cantidad_Stock" />
-            <TableColumn fx:id="ColPrecio" prefWidth="140.0" text="Precio" />
+            <TableColumn fx:id="ColCodigo" maxWidth="1.7976931348623157E308" prefWidth="140.0" text="Código" />
+          <TableColumn fx:id="ColNombre" maxWidth="1.7976931348623157E308" prefWidth="140.0" text="Nombre" />
+          <TableColumn fx:id="ColMaterial" maxWidth="1.7976931348623157E308" prefWidth="140.0" text="Materiales" />
+            <TableColumn fx:id="ColCantidad" maxWidth="1.7976931348623157E308" prefWidth="140.0" text="Cantidad_Stock" />
+            <TableColumn fx:id="ColPrecio" maxWidth="1.7976931348623157E308" prefWidth="140.0" text="Precio" />
         </columns>
       </TableView>
    </center>
