@@ -18,7 +18,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Person;
 
-public class MenuController {
+public class AdminTablaController {
 
 
 	@FXML
@@ -104,6 +104,9 @@ public class MenuController {
 
 	// Pantalla principal en la que se añade o quita contenido
 	private BorderPane rootLayout;
+	
+	// Referencia a la aplicación principal
+    private Inicio mainApp;
 
 	/* -- INICIALIZADOR -------------------------------------------------------------------------------------------- */
     @FXML
@@ -128,7 +131,7 @@ public class MenuController {
     private void abrirFormulario(ActionEvent event) {
     	try {
 
-    		  FXMLLoader loader=new FXMLLoader(getClass().getResource("/view/FormController.fxml"));
+    		  FXMLLoader loader=new FXMLLoader(getClass().getResource("/view/Formulario.fxml"));
     		  //Se carga la venta
     		  Parent root=loader.load();
 
@@ -209,7 +212,8 @@ public class MenuController {
 
 			// Modal hasta que no termine con el formulario no me deja volver a la ventana
 			// anterior
-			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.initModality(Modality.WINDOW_MODAL);
+			stage.setResizable(false);
 			stage.setScene(scene);
 			stage.showAndWait();
 

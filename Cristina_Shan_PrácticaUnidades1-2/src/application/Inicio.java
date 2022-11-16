@@ -15,7 +15,7 @@ public class Inicio extends Application {
 		try {
 			// Carga el diseño del archivo FXML en la variable rootLayout
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainPractica.class.getResource("/view/InicioStore.fxml"));
+			loader.setLocation(Inicio.class.getResource("/view/InicioStore.fxml"));
 			rootInicio = (BorderPane) loader.load();
 
 			// Pasamos al controlador de menu el objeto con el BorderPane principal
@@ -35,6 +35,8 @@ public class Inicio extends Application {
 		}
 	}
 
-
+	public static void main(String[] args) {
+		launch(args);
+	}
 
 }

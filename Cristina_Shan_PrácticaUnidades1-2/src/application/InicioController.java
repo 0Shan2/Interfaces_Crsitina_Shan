@@ -58,7 +58,7 @@ public class InicioController {
 	@FXML
 	void AbrirListas(ActionEvent event) {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Menu.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AdminTabla.fxml"));
 			// Se carga la venta
 			Parent root = loader.load();
 
@@ -68,7 +68,7 @@ public class InicioController {
 
 			// Modal hasta que no termine con el formulario no me deja volver a la ventana
 			// anterior
-			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.initModality(Modality.WINDOW_MODAL);
 			stage.setScene(scene);
 			stage.showAndWait();
 
