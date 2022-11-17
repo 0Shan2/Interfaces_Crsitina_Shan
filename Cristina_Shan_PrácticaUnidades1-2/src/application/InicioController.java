@@ -69,6 +69,7 @@ public class InicioController {
 			// Modal hasta que no termine con el formulario no me deja volver a la ventana
 			// anterior
 			stage.initModality(Modality.WINDOW_MODAL);
+			stage.setResizable(false);
 			stage.setScene(scene);
 			stage.showAndWait();
 

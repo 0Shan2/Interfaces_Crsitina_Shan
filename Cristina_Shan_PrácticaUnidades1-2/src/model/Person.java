@@ -12,7 +12,7 @@ public class Person {
 	private final SimpleIntegerProperty Cantidad_Stock;
 	private final SimpleIntegerProperty Precio;
 
-
+	
 	public Person(String codigo, String nombre, String material,
 			Integer cantidad_Stock, Integer precio) {
 		super();
@@ -22,7 +22,8 @@ public class Person {
 		Cantidad_Stock = new SimpleIntegerProperty(cantidad_Stock);
 		Precio = new SimpleIntegerProperty(precio);
 	}
-
+	
+	
 
 	public String getCodigo() {
 		return Codigo.get();
@@ -67,6 +68,14 @@ public class Person {
 		Precio.set(fPrecio);
 		return fPrecio;
 	}
+
+
+	public void add(Person nuevoItem) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 
 
 

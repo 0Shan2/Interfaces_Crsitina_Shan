@@ -9,6 +9,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -19,6 +22,12 @@ import javafx.stage.Stage;
 import model.Person;
 
 public class AdminTablaController {
+	
+	// Pantalla principal en la que se añade o quita contenido
+		private BorderPane rootLayout;
+		
+	//Hacemos referencia a este controlador mismo
+		private AdminTablaController AdminTablaC;
 
 
 	@FXML
@@ -38,11 +47,6 @@ public class AdminTablaController {
 
 	    @FXML
 	    private TableColumn<Person, Integer> ColPrecio;
-	    
-	 // Este componente será un diálogo. Campos auxiliares para su gestión
-	    private Stage dialogStage;
-	    private Person person;
-	    private boolean okClicked = false;
 
 	    // Lista auxiliar para TableView
 	    private ObservableList<Person> data = FXCollections.observableArrayList(
@@ -105,10 +109,6 @@ public class AdminTablaController {
 	    	    new Person("SPe00002", "Hojarldre Sets", "Platino con esmeraldas", 1, 1950)
 	    	);
 
-
-
-	// Pantalla principal en la que se añade o quita contenido
-	private BorderPane rootLayout;
 	
 
 	/* -- INICIALIZADOR -------------------------------------------------------------------------------------------- */
@@ -127,6 +127,37 @@ public class AdminTablaController {
 
         // Se rellena la tabla con objetos de la clase Person
     	TablaLista.setItems(data);
+    }
+    
+    public ObservableList<Person> getPersonData() {
+		return data;
+	}
+    
+    //Relleno el controlador con la tabla
+    public void setAdminTablaC(AdminTablaController AdminTablaC) {
+        this.AdminTablaC = AdminTablaC;
+        TablaLista.setItems(this.AdminTablaC.getPersonData());
+    }
+    
+    
+    private void showPersonDetails(Person person) {
+        if (person != null) {
+        	// Si el campo contiene datos, entonces se rellena la información
+        	ColCodigo.setText(person.getCodigo());
+        	ColNombre.setText(person.getNombre());
+        	ColMaterial.setText(person.getMaterial());
+        	ColCantidad.setText(Integer.toString(person.getCantidad_Stock()));
+        	ColPrecio.setText(Integer.toString(person.getPrecio()));
+            
+        } else {
+            // Person is null, remove all the text.
+        	ColCodigo.setText("");
+        	ColNombre.setText("");
+        	ColMaterial.setText("");
+        	ColCantidad.setText("");
+        	ColPrecio.setText("");
+        }
+            
     }
 
 
@@ -155,39 +186,6 @@ public class AdminTablaController {
     	TablaLista.setItems(dataSets);
     }
     
-    //Rellenamos los datos para añadirlos
-    public void setPerson(Person person) {
-    	this.person = person;
-    	ColCodigo.setText(person.getCodigo());
-    	ColNombre.setText(person.getNombre());
-    	ColMaterial.setText(person.getMaterial());
-    	ColCantidad.setText(Integer.toString(person.getCantidad_Stock()));
-    	ColPrecio.setText(Integer.toString(person.getPrecio()));
-    }
-    
-    ///* -- ABIRMOS EL FORMULARIO -------------------------------------------------------------------------------------------- */
-    @FXML
-    private void abrirFormulario(ActionEvent event) {
-    	try {
-
-    		  FXMLLoader loader=new FXMLLoader(getClass().getResource("/view/Formulario.fxml"));
-    		  //Se carga la venta
-    		  Parent root=loader.load();
-
-    		  //crear una escena que viene del padre
-    		  Scene scene =new Scene(root);
-    		  Stage stage= new Stage();
-
-    		  //Modal hasta que no termine con el formulario no me deja volver a la ventana anterior
-    		  stage.initModality(Modality.APPLICATION_MODAL);
-    		  stage.setScene(scene);
-    		  stage.setResizable(false);
-    		  stage.showAndWait();
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-    }
     
     /* ---- ABRE LA GUÍA -------------------------------------------------------------------------------------------- */
     @FXML
@@ -217,25 +215,25 @@ public class AdminTablaController {
     //---------- ABIRIR  INICIO -------------------------------------------------------------------
     @FXML
     void abrirInicio(ActionEvent event) {
-    	try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/InicioStore.fxml"));
-			// Se carga la venta
-			Parent root = loader.load();
-
-			// crear una escena que viene del padre
-			Scene scene = new Scene(root);
-			Stage stage = new Stage();
-
-			// Modal hasta que no termine con el formulario no me deja volver a la ventana
-			// anterior
-			stage.initModality(Modality.WINDOW_MODAL);
-			stage.setResizable(false);
-			stage.setScene(scene);
-			stage.showAndWait();
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//    	try {
+//			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/InicioStore.fxml"));
+//			// Se carga la venta
+//			Parent root = loader.load();
+//
+//			// crear una escena que viene del padre
+//			Scene scene = new Scene(root);
+//			Stage stage = new Stage();
+//
+//			// Modal hasta que no termine con el formulario no me deja volver a la ventana
+//			// anterior
+//			stage.initModality(Modality.WINDOW_MODAL);
+//			stage.setResizable(false);
+//			stage.setScene(scene);
+//			stage.showAndWait();
+//
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
     }
 
     @FXML
@@ -253,19 +251,104 @@ public class AdminTablaController {
 	}
 	
 	//----------------------------------------------------------------------------------------------------
+	
+	///* -- ABIRMOS EL FORMULARIO -------------------------------------------------------------------------------------------- */
+    @FXML
+    boolean abrirFormulario(Person person) {
+    	try {
+
+    		  FXMLLoader loader=new FXMLLoader(getClass().getResource("/view/Formulario.fxml"));
+    		  //Se carga la venta
+    		  Parent root=loader.load();
+    		  BorderPane page = (BorderPane) loader.load();
+
+    		  //crear una escena para mostrar el dialogo
+    		 Stage dialogStage = new Stage();
+    		 dialogStage.setTitle("Formulario: añadir o editar");
+    		 dialogStage.initModality(Modality.WINDOW_MODAL);
+    		 dialogStage.initOwner(dialogStage);
+    		 Scene scene = new Scene(page);
+    		 dialogStage.setScene(scene);
+    		 
+
+ 	        // Carga la persona en el controlador
+ 	        FormularioController controller = loader.getController();
+ 	        controller.setDialogStage(dialogStage);
+ 	        controller.setPerson(person);
+
+ 	        // Muestra el diálogo y no continúa el código hasta que lo cierra el usuario
+ 	        dialogStage.showAndWait();
+
+ 	        return controller.isOkClicked();
+ 	    } catch (IOException e) {
+ 	        e.printStackTrace();
+ 	        return false;
+ 	    }
+    }
+    
+  //---------ELIMINAR PERSONA-------------------------------------------------------------------------------------------
 	 @FXML
 	    void eliminarForm(ActionEvent event) {
-
+			int selectedIndex = TablaLista.getSelectionModel().getSelectedIndex();
+	    	
+	    	// Si no hay ningún campo seleccionado, se muestra un alert
+	    	if (selectedIndex >= 0) {
+	    		// Si se ha seleccionado una fila, se muestra un pop up de confirmación
+	    		Alert confirm = new Alert(AlertType.CONFIRMATION);
+	        	
+	    		confirm.setTitle("Confirmación para eliminar");
+	    		//errorAlert.setHeaderText("Va a eliminar la fila seleccionada");
+	    		confirm.setContentText("¿Está seguro de eliminar la fila actual?");
+	    		    	    		
+	    		// Si el usuario acepta, entonces se lleva a cabo la acción correspondiente
+	    		confirm.showAndWait().ifPresent(response -> {
+	    			if (response == ButtonType.OK) {
+	    				TablaLista.getItems().remove(selectedIndex);
+	    		    }
+	    		});
+	    	} else {
+	    		// Se muestra un alert si no se puede eliminar la fila
+	    		Alert errorAlert = new Alert(AlertType.ERROR);
+	        	
+	    		errorAlert.setTitle("Error al eliminar");
+	    		errorAlert.setHeaderText("Se ha producido un error");
+	    		errorAlert.setContentText("No se puede eliminar porque no ha seleccionado una fila o la tabla está vacía");
+	    		
+	    		errorAlert.showAndWait();
+	    	}    	
 	    }
-
-	    @FXML
+	 
+	 @FXML
 	    void openForm(ActionEvent event) {
-
+		 Person tempPerson = new Person("", "", "", 0, 0);
+	        boolean okClicked = AdminTablaC.abrirFormulario(tempPerson);
+	        if (okClicked) {
+	        	AdminTablaC.getPersonData().add(tempPerson);
+	        }  
 	    }
-
+	     
+	 
 	    @FXML
 	    void updateForm(ActionEvent event) {
+	    	Person selectedPerson = TablaLista.getSelectionModel().getSelectedItem();
+	        if (selectedPerson != null) {
+	            boolean okClicked = AdminTablaC.abrirFormulario(selectedPerson);
+	            if (okClicked) {
+	                showPersonDetails(selectedPerson);
+	            }
 
+	        } else {
+	        	// Se muestra un alert si no se puede eliminar la fila
+	    		Alert errorAlert = new Alert(AlertType.ERROR);
+	        	
+	    		errorAlert.setTitle("Error al editar persona");
+	    		errorAlert.setHeaderText("No se ha seleccionado ninguna fila");
+	    		errorAlert.setContentText("Por favor, selecciona una persona en la tabla");
+	    		
+	    		errorAlert.showAndWait();
+	        }
 	    }
+	    
+	    
 
 }
