@@ -2,6 +2,7 @@ package view;
 
 import java.io.IOException;
 
+import application.InicioController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -130,6 +131,7 @@ public class AdminTablaController {
     }
     
     public ObservableList<Person> getPersonData() {
+    	System.out.println(data);
 		return data;
 	}
     
@@ -259,14 +261,16 @@ public class AdminTablaController {
 
     		  FXMLLoader loader=new FXMLLoader(getClass().getResource("/view/Formulario.fxml"));
     		  //Se carga la venta
-    		  Parent root=loader.load();
+    		  //Parent root=loader.load();
     		  BorderPane page = (BorderPane) loader.load();
 
     		  //crear una escena para mostrar el dialogo
     		 Stage dialogStage = new Stage();
     		 dialogStage.setTitle("Formulario: añadir o editar");
-    		 dialogStage.initModality(Modality.WINDOW_MODAL);
-    		 dialogStage.initOwner(dialogStage);
+    		 dialogStage.initModality(Modality.APPLICATION_MODAL);
+    		 
+    		 //Tenemos que pasar el Stage de la ventana anterior, que se lo pasaremos al controlador
+    		 //dialogStage.initOwner(dialogStage);
     		 Scene scene = new Scene(page);
     		 dialogStage.setScene(scene);
     		 
@@ -321,7 +325,8 @@ public class AdminTablaController {
 	 @FXML
 	    void openForm(ActionEvent event) {
 		 Person tempPerson = new Person("", "", "", 0, 0);
-	        boolean okClicked = AdminTablaC.abrirFormulario(tempPerson);
+		 //abrirFormulario y getPersonData llaman al mismo controlador
+	        boolean okClicked = abrirFormulario(tempPerson);
 	        if (okClicked) {
 	        	AdminTablaC.getPersonData().add(tempPerson);
 	        }  
@@ -332,7 +337,8 @@ public class AdminTablaController {
 	    void updateForm(ActionEvent event) {
 	    	Person selectedPerson = TablaLista.getSelectionModel().getSelectedItem();
 	        if (selectedPerson != null) {
-	            boolean okClicked = AdminTablaC.abrirFormulario(selectedPerson);
+	        	// abre el formulario que llamaba al mismo controlador
+	            boolean okClicked = abrirFormulario(selectedPerson);
 	            if (okClicked) {
 	                showPersonDetails(selectedPerson);
 	            }
@@ -343,7 +349,7 @@ public class AdminTablaController {
 	        	
 	    		errorAlert.setTitle("Error al editar persona");
 	    		errorAlert.setHeaderText("No se ha seleccionado ninguna fila");
-	    		errorAlert.setContentText("Por favor, selecciona una persona en la tabla");
+	    		errorAlert.setContentText("Por favor, selecciona una fila en la tabla");
 	    		
 	    		errorAlert.showAndWait();
 	        }
