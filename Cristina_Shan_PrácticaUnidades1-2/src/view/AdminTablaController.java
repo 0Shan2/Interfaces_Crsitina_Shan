@@ -28,7 +28,7 @@ public class AdminTablaController {
 		private BorderPane rootLayout;
 		
 	//Hacemos referencia a este controlador mismo
-		private AdminTablaController AdminTablaC;
+		//private AdminTablaController AdminTablaC;
 
 
 	@FXML
@@ -131,17 +131,18 @@ public class AdminTablaController {
     }
     
     public ObservableList<Person> getPersonData() {
-    	System.out.println(data);
 		return data;
 	}
     
-    //Relleno el controlador con la tabla
-    public void setAdminTablaC(AdminTablaController AdminTablaC) {
-        this.AdminTablaC = AdminTablaC;
-        TablaLista.setItems(this.AdminTablaC.getPersonData());
-    }
+//    //Relleno el controlador con la tabla
+//    public void setAdminTablaC(AdminTablaController AdminTablaC) {
+//        this.AdminTablaC = AdminTablaC;
+//        //TablaLista.setItems(this.AdminTablaC.getPersonData());
+//        //TablaLista.setItems(getPersonData());
+//    }
     
-    
+    //Rellena todos los campos para mostrar información detallada de una persona
+    //Si el parámero es nulo, entonces se rellenan en
     private void showPersonDetails(Person person) {
         if (person != null) {
         	// Si el campo contiene datos, entonces se rellena la información
@@ -328,7 +329,8 @@ public class AdminTablaController {
 		 //abrirFormulario y getPersonData llaman al mismo controlador
 	        boolean okClicked = abrirFormulario(tempPerson);
 	        if (okClicked) {
-	        	AdminTablaC.getPersonData().add(tempPerson);
+	        	//TODO DA ERROR
+	        	//AdminTablaC.getPersonData().add(tempPerson);
 	        }  
 	    }
 	     

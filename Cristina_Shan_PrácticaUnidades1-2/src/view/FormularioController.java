@@ -64,11 +64,15 @@ public class FormularioController {
 	    @FXML
 	    void GuardarForm(ActionEvent event) {
 	    	 if (isInputValid()) {
-	             person.setCodigo(codigoField.getText());
-	             person.setNombre(nombreField.getText());
-	             person.setMaterial(materialesField.getText());
-	             person.setCantidad_Stock(Integer.parseInt(cantidadField.getText()));
-	             person.setPrecio(Integer.parseInt(precioField.getText()));
+	    		 
+	    		 person = new Person(codigoField.getText(), nombreField.getText(),
+	    				 materialesField.getText(), Integer.parseInt(cantidadField.getText()),
+	    				 Integer.parseInt(precioField.getText()));
+//	             person.setCodigo(codigoField.getText());
+//	             person.setNombre(nombreField.getText());
+//	             person.setMaterial(materialesField.getText());
+//	             person.setCantidad_Stock(Integer.parseInt(cantidadField.getText()));
+//	             person.setPrecio(Integer.parseInt(precioField.getText()));
 	            
 	             okClicked = true;
 	             dialogStage.close();
@@ -88,17 +92,17 @@ public class FormularioController {
 	        String errorMessage = "";
 
 	        if (codigoField.getText() == null || codigoField.getText().length() == 0) {
-	            errorMessage += "El campo first name está vacío\n"; 
+	            errorMessage += "El campo código está vacío\n"; 
 	        }
 	        if (nombreField.getText() == null || nombreField.getText().length() == 0) {
-	            errorMessage += "El campo last name está vacío\n"; 
+	            errorMessage += "El campo nombre está vacío\n"; 
 	        }
 	        if (materialesField.getText() == null || materialesField.getText().length() == 0) {
-	            errorMessage += "El campo street está vacío\n"; 
+	            errorMessage += "El campo materiales está vacío\n"; 
 	        }
 
 	        if (cantidadField.getText() == null || cantidadField.getText().length() == 0) {
-	            errorMessage += "El campo postal code está vacío\n"; 
+	            errorMessage += "El campo cantidad code está vacío\n"; 
 	        } else {
 	            // Se intenta convertir el código postal en entero y si da un error se muestra un mensaje
 	            try {
@@ -108,7 +112,7 @@ public class FormularioController {
 	            }
 	        }
 	        if (precioField.getText() == null || precioField.getText().length() == 0) {
-	            errorMessage += "El campo city está vacío\n"; 
+	            errorMessage += "El campo precio está vacío\n"; 
 	        }
 
 
@@ -130,7 +134,7 @@ public class FormularioController {
 	    @FXML
 	    void CancelarForm(ActionEvent event) {
 	    	//Cerrar la ventana
-	    	
+	    	 dialogStage.close();
 	    }
 
 	    
