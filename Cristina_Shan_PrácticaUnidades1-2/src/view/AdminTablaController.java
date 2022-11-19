@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import application.InicioController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,15 +17,19 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Person;
 
 public class AdminTablaController implements Initializable {
 
+	@FXML
+	private TextField filtrarCodigoField;
+	 
 	@FXML
 	private TableView<Person> TablaLista;
 
@@ -108,13 +111,15 @@ public class AdminTablaController implements Initializable {
 			new Person("SPe00001", "Brithday Sets", "Diamantes marquesa", 3, 1500),
 			new Person("SPe00002", "Hojarldre Sets", "Platino con esmeraldas", 1, 1950));
 
+	// Para filtrar por código
+	private ObservableList<Person> filtro;
+	
 	/*
-	 * --
-	 * INICIALIZADOR----------------------------------------------------------------
-	 * ----------------------------
+	 * -- INICIALIZADOR--------------------------------------------------------------------------------------------
 	 */
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		filtro = FXCollections.observableArrayList();
 		// TODO Auto-generated method stub
 		// Asociamos cada columna del TableView a una propiedad de la clase Person
 		ColCodigo.setCellValueFactory(new PropertyValueFactory<Person, String>("Codigo"));
@@ -157,6 +162,24 @@ public class AdminTablaController implements Initializable {
 	void abrirTablaSets(ActionEvent event) {
 		TablaLista.setItems(dataSets);
 	}
+	
+
+    @FXML
+    void buscarCodigo(KeyEvent event) {
+    	String filtroCodigo = this.filtrarCodigoField.getText();
+    	// Si esl texto esta vacío
+    	if (filtroCodigo.isEmpty()) {
+    		this.TablaLista.setItems(data);
+    	} else {
+    		this.filtro.clear();
+    		for(Person p : this.data) {
+    			if (p.getCodigo().toLowerCase().contains(filtroCodigo.toLowerCase())) {
+    				this.filtro.add(p);
+    			}
+    		}
+    		this.TablaLista.setItems(filtro);
+    	}
+    }
 
 	/*
 	 * ---- MÉTODO QUE ABRE LA GUÍA
@@ -186,8 +209,7 @@ public class AdminTablaController implements Initializable {
 		}
 	}
 
-	// ---------MÉTODOS CON CONSECUENCIA EN EL
-	// FORMULARIO------------------------------------------------------
+	// --------- MÉTODOS CON CONSECUENCIA EN EL FORMULARIO------------------------------------------------------
 	@FXML
 	void btnAgregar(ActionEvent event) {
 		try {
@@ -210,6 +232,10 @@ public class AdminTablaController implements Initializable {
 			if (pItem != null) {
 				// Añadimos el item a nuestro ObservableList
 				this.data.add(pItem);
+				// En caso de que filtremos el codigo y sea similar se añade al ObservableList filtro
+				if (pItem.getCodigo().toLowerCase().contains(this.filtrarCodigoField.getText().toLowerCase())) {
+					this.filtro.add(pItem);
+				}
 				// Refrescamos la tabla
 				this.TablaLista.refresh();
 			}
@@ -250,6 +276,9 @@ public class AdminTablaController implements Initializable {
 				//Cogemos la persona 
 				Person aux = controlador.getPersona();
 				if (aux != null) {
+					if (aux.getCodigo().toLowerCase().contains(this.filtrarCodigoField.getText().toLowerCase())) {
+						this.filtro.add(aux);
+					}
 					this.TablaLista.refresh();
 				}
 			} catch (IOException ex) {
@@ -276,6 +305,7 @@ public class AdminTablaController implements Initializable {
 			confirm.showAndWait().ifPresent(response -> {
     			if (response == ButtonType.OK) {
     				TablaLista.getItems().remove(selectItem);
+    				this.filtro.remove(selectItem);
     		    }
     		});
 			//Si no hemos seleccionado nada
@@ -288,5 +318,7 @@ public class AdminTablaController implements Initializable {
 			errorAlert.showAndWait();
 		}
 	}
+	
+	
 
 }
