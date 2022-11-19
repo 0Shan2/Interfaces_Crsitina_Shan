@@ -9,6 +9,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
@@ -18,7 +20,7 @@ public class InicioController {
 
 	@FXML
 	private ChoiceBox<String> ChoiceLocation;
-
+	
 
 	//Pantalla principal en donde se muestra o añade el contenido
 	private BorderPane rootInicio;
@@ -54,6 +56,7 @@ public class InicioController {
 
 	}
 
+	//---- MÉTODOS QUE NOS CAMBIAN DE VETANAS --------------------------------------------------------------------------------------------------
 	/* -- NOS ABRA EL CENTRO DE ADMINISTRACIÓN -------------------------------------------------------------------------------------------- */
 	@FXML
 	void AbrirListas(ActionEvent event) {
@@ -95,7 +98,7 @@ public class InicioController {
 			Scene scene = new Scene(rootInicio);
 			stage.setScene(scene);
 			stage.show();
-			// Se sitúa en el centro del diseño principal
+			
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -110,5 +113,9 @@ public class InicioController {
 	public void setRootLayout(BorderPane rootLayout) {
 		this.rootInicio = rootLayout;
 	}
+	
+	//---- MÉTODOS CON EFECTOS EN LA VETANA PRINCIPAL ----------------------------------------------------------------------------------
+	
+	
 
 }
