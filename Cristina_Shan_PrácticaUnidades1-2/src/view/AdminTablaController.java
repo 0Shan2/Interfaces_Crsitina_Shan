@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -29,6 +32,14 @@ public class AdminTablaController implements Initializable {
 
 	@FXML
 	private TextField filtrarCodigoField;
+	// Listener para el campo de textoField
+		InvalidationListener textListener = new InvalidationListener() {
+			@Override
+			public void invalidated(Observable observable) {
+				StringProperty sp = (StringProperty) observable;
+				System.out.println(observable.toString() + ", " + sp.get());				
+			}
+		};
 	 
 	@FXML
 	private TableView<Person> TablaLista;
@@ -134,6 +145,13 @@ public class AdminTablaController implements Initializable {
 
 		// Se rellena la tabla con objetos de la clase Person
 		TablaLista.setItems(data);
+		
+		//------------- LISTENERS -------------------------------------------------------
+		//Cuando insertamos algo en el TextField se notifica por consola
+		filtrarCodigoField.textProperty().addListener(textListener);
+		
+        
+		
 	}
 
 	// ---- MÉTODOS PARA CAMBIAR LA TABLA DIRECTAMENTE EN LA MISMA VENTANA
@@ -203,6 +221,7 @@ public class AdminTablaController implements Initializable {
 			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.setScene(scene);
 			stage.showAndWait();
+			
 
 		} catch (IOException e) {
 			e.printStackTrace();

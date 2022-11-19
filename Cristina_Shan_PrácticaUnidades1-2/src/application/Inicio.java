@@ -1,8 +1,10 @@
 package application;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -30,6 +32,20 @@ public class Inicio extends Application {
 			//primaryStage.setMaximized(false);
 			primaryStage.setTitle("Joyería SIX");
 			primaryStage.show();
+			
+			//----- MANEJADOR DE FILTRO CUANDO CLICKEAMOS EN LA ESCENA ------------------------------------
+			// Caodígo que sirve para filtros y manejadores
+			EventHandler<MouseEvent> manejo = (MouseEvent event) -> {
+				System.out.println("Manjeador común para filtros y handlers del evento" + event.getEventType());
+			};
+			// Filtro para cualquier evento MOUSE_PRESSED
+			scene.addEventFilter(MouseEvent.MOUSE_PRESSED, e -> {
+				String type = e.getEventType().getName();
+				String source = e.getSource().getClass().getSimpleName();
+				String target = e.getTarget().getClass().getSimpleName();
+				System.out.println("Filtro específico de: " + type + ", " + source + ", " + target);
+			});
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
