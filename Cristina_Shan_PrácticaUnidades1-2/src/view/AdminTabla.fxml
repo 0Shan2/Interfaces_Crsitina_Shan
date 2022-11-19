@@ -59,7 +59,7 @@
    <center>
       <AnchorPane prefHeight="615.0" prefWidth="700.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="TablaLista" prefHeight="591.0" prefWidth="700.0">
+            <TableView fx:id="TablaLista" prefHeight="591.0" prefWidth="697.0">
               <columns>
                   <TableColumn fx:id="ColCodigo" maxWidth="1.7976931348623157E308" prefWidth="140.0" text="Código" />
                 <TableColumn fx:id="ColNombre" maxWidth="1.7976931348623157E308" prefWidth="140.0" text="Nombre" />
