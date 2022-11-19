@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
@@ -22,8 +24,6 @@ public class Person {
 		Cantidad_Stock = new SimpleIntegerProperty(cantidad_Stock);
 		Precio = new SimpleIntegerProperty(precio);
 	}
-	
-	
 
 	public String getCodigo() {
 		return Codigo.get();
@@ -75,6 +75,26 @@ public class Person {
 		
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(Cantidad_Stock, Codigo, Material, Nombre, Precio);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Person other = (Person) obj;
+		return Objects.equals(Cantidad_Stock, other.Cantidad_Stock) && Objects.equals(Codigo, other.Codigo)
+				&& Objects.equals(Material, other.Material) && Objects.equals(Nombre, other.Nombre)
+				&& Objects.equals(Precio, other.Precio);
+	}
+
+	
 
 
 

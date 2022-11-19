@@ -9,6 +9,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
@@ -21,9 +22,9 @@
               <menus>
                 <Menu mnemonicParsing="false" text="Formulario">
                   <items>
-                        <MenuItem mnemonicParsing="false" onAction="#openForm" text="Agregar" />
-                    <MenuItem mnemonicParsing="false" onAction="#updateForm" text="Actualizar" />
-                        <MenuItem mnemonicParsing="false" onAction="#eliminarForm" text="Eliminar" />
+                        <MenuItem mnemonicParsing="false" text="Agregar" />
+                    <MenuItem mnemonicParsing="false" text="Actualizar" />
+                        <MenuItem mnemonicParsing="false" text="Eliminar" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Ayuda">
@@ -33,7 +34,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Centro">
                   <items>
-                    <MenuItem mnemonicParsing="false" onAction="#abrirInicio" text="Inicio" />
+                    <MenuItem mnemonicParsing="false" text="Inicio" />
                         <MenuItem mnemonicParsing="false" text="Sobre SIX" />
                   </items>
                 </Menu>
@@ -56,14 +57,25 @@
          </BorderPane.margin></VBox>
    </left>
    <center>
-      <TableView fx:id="TablaLista" prefHeight="650.0" prefWidth="700.0" BorderPane.alignment="CENTER">
-        <columns>
-            <TableColumn fx:id="ColCodigo" maxWidth="1.7976931348623157E308" prefWidth="140.0" text="Código" />
-          <TableColumn fx:id="ColNombre" maxWidth="1.7976931348623157E308" prefWidth="140.0" text="Nombre" />
-          <TableColumn fx:id="ColMaterial" maxWidth="1.7976931348623157E308" prefWidth="140.0" text="Materiales" />
-            <TableColumn fx:id="ColCantidad" maxWidth="1.7976931348623157E308" prefWidth="140.0" text="Cantidad_Stock" />
-            <TableColumn fx:id="ColPrecio" maxWidth="1.7976931348623157E308" prefWidth="140.0" text="Precio" />
-        </columns>
-      </TableView>
+      <AnchorPane prefHeight="615.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="TablaLista" prefHeight="591.0" prefWidth="700.0">
+              <columns>
+                  <TableColumn fx:id="ColCodigo" maxWidth="1.7976931348623157E308" prefWidth="140.0" text="Código" />
+                <TableColumn fx:id="ColNombre" maxWidth="1.7976931348623157E308" prefWidth="140.0" text="Nombre" />
+                <TableColumn fx:id="ColMaterial" maxWidth="1.7976931348623157E308" prefWidth="140.0" text="Materiales" />
+                  <TableColumn fx:id="ColCantidad" maxWidth="1.7976931348623157E308" prefWidth="140.0" text="Cantidad_Stock" />
+                  <TableColumn fx:id="ColPrecio" maxWidth="1.7976931348623157E308" prefWidth="140.0" text="Precio" />
+              </columns>
+            </TableView>
+            <HBox alignment="CENTER" layoutX="305.0" layoutY="610.0" prefHeight="28.0" prefWidth="373.0" spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#btnAgregar" prefWidth="100.0" style="-fx-background-color: #c1e2db;" text="Agregar" />
+                  <Button mnemonicParsing="false" onAction="#btnActualizar" prefWidth="100.0" style="-fx-background-color: #c1e2db;" text="Actualizar" />
+                  <Button mnemonicParsing="false" onAction="#btnEliminar" prefWidth="100.0" style="-fx-background-color: #c1e2db;" text="Eliminar" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
    </center>
 </BorderPane>
