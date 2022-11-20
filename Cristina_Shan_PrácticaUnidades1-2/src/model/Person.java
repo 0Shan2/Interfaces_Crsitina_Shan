@@ -94,7 +94,6 @@ public class Person {
 				&& Objects.equals(Precio, other.Precio);
 	}
 
-	
 
 
 

@@ -11,8 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TabPane layoutY="-1.0" prefHeight="600.0" prefWidth="801.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -297,6 +296,58 @@
                               <Image url="@../img/P4Center.png" />
                            </image>
                         </ImageView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="tab 5:  Agregando Funcionalidad">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="450.0" fitWidth="494.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/Pantalla_funcional.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="529.0" layoutY="47.0" prefHeight="316.0" prefWidth="264.0" spacing="5.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Actualización del Centro de Administración" wrappingWidth="260.3955078125">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Implementación de funcionalidad." wrappingWidth="226.677001953125">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Para empezar se han añadido tres botones debajo de la tabla:  agregar, actualizar y eliminar." wrappingWidth="263.2132568359375">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cuando pulsamos a cualquiera de estos tres botones nos aparecera un formulario, dependiendo de cual hayamos presionado este hará su función." wrappingWidth="261.60003662109375">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Además se ha añadido un buscador, que nos permite buscar un item de la tabla por su código." wrappingWidth="261.02618408203125">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <ImageView fitHeight="158.0" fitWidth="242.0" layoutX="540.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/Pantalla_funcional_eleminar.png" />
+                           </image>
+                        </ImageView>
+                        <Text layoutX="169.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ejemplo de alerta a la hora de eliminar un item de la tabla.">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
                      </children>
                   </AnchorPane>
               </content>

@@ -65,8 +65,8 @@ public class FormDialogController implements Initializable{
 		this.nombreField.setText(paramp.getNombre());
 		this.materialesField.setText(paramp.getMaterial());
 		// Le ponemos un "+ ' '" para que nos los cuente como texto
-		this.cantidadField.setText(paramp.getCantidad_Stock() + " ");
-		this.precioField.setText(paramp.getPrecio() + " ");
+		this.cantidadField.setText(paramp.getCantidad_Stock() + "");
+		this.precioField.setText(paramp.getPrecio() + "");
 	}
 	
 	//------ ACTION EVENTs ---------------------------------------------------------------------------

@@ -18,6 +18,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Pagination;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -29,6 +30,9 @@ import javafx.stage.Stage;
 import model.Person;
 
 public class AdminTablaController implements Initializable {
+	
+	@FXML
+    private Pagination pagination;
 
 	@FXML
 	private TextField filtrarCodigoField;
@@ -138,6 +142,7 @@ public class AdminTablaController implements Initializable {
 		ColMaterial.setCellValueFactory(new PropertyValueFactory<Person, String>("Material"));
 		ColCantidad.setCellValueFactory(new PropertyValueFactory<Person, Integer>("Cantidad_Stock"));
 		ColPrecio.setCellValueFactory(new PropertyValueFactory<Person, Integer>("Precio"));
+		
 
 		// Para conseguir que la primera columna sea editable (se define a nivel de
 		// columna siempre que tabla y columna sean editables)
@@ -146,11 +151,20 @@ public class AdminTablaController implements Initializable {
 		// Se rellena la tabla con objetos de la clase Person
 		TablaLista.setItems(data);
 		
+		
+		// Cuando eliminamos un item, da un error
 		//------------- LISTENERS -------------------------------------------------------
 		//Cuando insertamos algo en el TextField se notifica por consola
 		filtrarCodigoField.textProperty().addListener(textListener);
 		
-        
+		
+		// Prueba de listener al añadir un nuevo elemento
+		TablaLista.getItems().addListener((Observable observable) -> {
+    		System.out.println("Añadido a la tabla -> " + observable);
+    	});
+		
+		
+		
 		
 	}
 
@@ -337,6 +351,7 @@ public class AdminTablaController implements Initializable {
 			errorAlert.showAndWait();
 		}
 	}
+	
 	
 	
 
